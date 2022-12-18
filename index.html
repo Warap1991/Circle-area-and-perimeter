@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<title>Area and perimeter of a circle</title>
+<style>
+    body{
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+        }
+    h2{
+        text-align: center;
+        text-decoration: underline red;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    div{
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 100px;
+    }
+    button{
+        float: right;
+    }
+</style>
+
+</head>
+
+<body>
+<h2>Let's calculate the area and the perimeter of a circle</h2>
+<div>
+    <label for="">What's the radius (cm) of the circle?:</label>
+    <input class="form-control" id="inp" >
+    <p>Click the following button to get the area and perimeter of the circle.</p>
+    <p id="para2"></p>
+    <p id = "para"></p>
+    <p id = "para1"></p>
+    <p id="para3"></p>
+    <button onclick = "func()" class="btn btn-primary"> calculate </button>
+    
+</div>
+
+<script> 
+
+function func()
+{
+var r1=document.getElementById('inp').value;
+if(isNaN(r1)){
+    document.getElementById('para2').innerHTML='Enter a valid number';
+}else{
+    let A=Math.PI*r1*r1; 
+    let P=2*Math.PI*r1; 
+    document.getElementById('para2').innerHTML = 'The <span style="color:green">radius</span> of the circle is: '+'<var style="color:green">'+r1+'cm'+'</var>';
+    document.getElementById('para').innerHTML = 'The <span style="color:blue">area</span> of the circle is: ' +'<var style="color:blue">'+A+'cm<sup>2</sup></var>';
+    document.getElementById('para1').innerHTML = 'The <span style="color:red">perimeter</span> of the circle is: '+'<var style="color:red">' +P+'cm</var>'; 
+    text='The formula of the area of a circle is <var style="color:blue">A= &prod;*r<sup>2</sup></var> and the perimeter is <var style="color:red">P= 2*&prod;*r</var>';
+    document.getElementById('para3').innerHTML = text;
+}
+ 
+}
+</script> 
+
+</body>
+
+</html>
+
+ 
